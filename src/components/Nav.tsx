@@ -12,7 +12,8 @@ const NavWrapper = styled.nav`
       text-align: center;
       display:flex;      
       flex-direction: column;
-      .linkWrapper {
+      color: #666;
+      >a {
 				display:flex;
 				flex-direction: column;
 				justify-content: center;
@@ -21,6 +22,13 @@ const NavWrapper = styled.nav`
 				>.icon {
 					width: 24px;
 					height: 24px;
+					fill: #666;
+				}
+				&.selected {
+					color: #222;
+					>.icon {
+						fill: #222;
+					}
 				}
       }
     }

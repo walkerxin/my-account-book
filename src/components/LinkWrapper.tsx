@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Icon from './Icon';
 import React from 'react';
 
@@ -10,10 +10,10 @@ type Props = {
 
 const LinkWrapper = (props : Props) => {
 	return (
-		<Link to={props.to}>
+		<NavLink to={props.to} activeClassName="selected">
 			<Icon name={props.iconName} />
 			<span>{props.text}</span>
-		</Link>
+		</NavLink>
 	)
 }
 
