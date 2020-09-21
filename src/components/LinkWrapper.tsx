@@ -8,13 +8,13 @@ type Props = {
 	text: string
 }
 
-const NavLink = (props : Props) => {
+const LinkWrapper = (props : Props) => {
 	return (
-		<Link to={props.to} className="linkWrapper">
+		<Link to={props.to}>
 			<Icon name={props.iconName} />
 			<span>{props.text}</span>
 		</Link>
 	)
 }
 
-export default NavLink;
+export default LinkWrapper;

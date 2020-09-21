@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import NavLink from 'components/NavLink';
+import LinkWrapper from 'components/LinkWrapper';
 
 const NavWrapper = styled.nav`
   line-height: 24px;
@@ -32,13 +32,13 @@ const Nav = () => {
 		<NavWrapper>
 			<ul>
 				<li>
-					<NavLink to="/tags" iconName="tag" text="标签" />
+					<LinkWrapper to="/tags" iconName="tag" text="标签" />
 				</li>
 				<li>
-					<NavLink to="/money" iconName="money" text="记一笔" />
+					<LinkWrapper to="/money" iconName="money" text="记一笔" />
 				</li>
 				<li>
-					<NavLink to="/statistics" iconName="statistic" text="统计" />
+					<LinkWrapper to="/statistics" iconName="statistic" text="统计" />
 				</li>
 			</ul>
 		</NavWrapper>
