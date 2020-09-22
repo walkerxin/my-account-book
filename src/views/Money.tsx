@@ -2,9 +2,19 @@ import Layout from '../components/Layout';
 import React from 'react';
 import styled from 'styled-components';
 
+const MyLayout = styled(Layout)`
+	display: flex;
+	flex-direction: column;
+`;
+
 const TagsSection = styled.section`
 	background: #FFF;
 	padding: 12px 16px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
 	> ol {
 		display:flex;
 		font-size: 14px;
@@ -126,7 +136,7 @@ const NumberPanelSection = styled.section`
 
 export default function Money() {
 	return (
-		<Layout>
+		<MyLayout>
 			<TagsSection>
 				<ol>
 					<li>衣</li>
@@ -167,6 +177,6 @@ export default function Money() {
 					<button>.</button>
 				</div>
 			</NumberPanelSection>
-		</Layout>
+		</MyLayout>
 	);
 }

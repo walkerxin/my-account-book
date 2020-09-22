@@ -14,14 +14,14 @@ const Main = styled.main`
 `;
 
 type Props = {
-	children: object
+	children: object,
+	className: string
 }
 
-const Layout = (props : Props) => {
-	console.log('prop ', props.children)
+const Layout = (props : any) => {
 	return (
 		<Wrapper>
-			<Main>
+			<Main className={props.className}>
 				{ props.children }
 			</Main>
 			<Nav/>
