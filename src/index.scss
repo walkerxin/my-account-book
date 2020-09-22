@@ -18,3 +18,17 @@ body {
   width: 1em;
   height: 1em;
 }
+
+button {
+  font-family: inherit;
+}
+
+:focus {
+  outline: none;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
