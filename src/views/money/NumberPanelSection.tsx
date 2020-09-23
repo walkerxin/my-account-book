@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Wrapper} from './NumberPanelSection/Wrapper';
 import {generateOutput} from './NumberPanelSection/generateOutput';
 
-const NumberPanelSection = () => {
-	const [output, _setOutput] = useState('0');
+type Props = {
+	value: string;
+	onChange: (output: string) => void;
+}
+const NumberPanelSection: React.FC<Props> = (props) => {
+	const output = props.value.toString();
 	const setOutput = (output: string) => {
 		if (output.length <= 16) {
 			output.length === 0 && (output = '0');
-			_setOutput(output);
+			props.onChange(output);
 		}
 	};
 	const onClickButtonWrapper = (e: React.MouseEvent) => {
