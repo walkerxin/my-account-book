@@ -24,6 +24,8 @@ const Wrapper = styled.section`
 			}
 			&.selected {
 				background: orange;
+				color: white;
+				font-weight: 700;
 			}
 		}
 	}
@@ -42,10 +44,9 @@ const TagsSection: React.FC = () => {
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
 	function onAddTag() {
-		const tagName = window.prompt(
-			'请输入你要新增的标签名称：');
-		if (tagName !== null) {
-			setTags([...tags, tagName]);
+		const tagName = window.prompt('请输入你要新增的标签名称：');
+		if (tagName && tagName.trim()) {
+			setTags([...tags, tagName.trim()]);
 		}
 	}
 
