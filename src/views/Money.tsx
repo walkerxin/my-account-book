@@ -19,28 +19,19 @@ export default function Money() {
 		category: '-' as Category,
 		output: '0'
 	});
+	const onChange = (obj: Partial<typeof selected>) => {
+		setSelected({...selected, ...obj});
+	};
 	return (
 		<MyLayout>
 			<TagsSection value={selected.tags}
-									 onChange={(tags) => setSelected({
-										 ...selected, tags
-									 })}
-			/>
+									 onChange={tags => onChange({tags})}/>
 			<NoteSection value={selected.note}
-									 onChange={(note) => setSelected({
-										 ...selected, note
-									 })}
-			/>
+									 onChange={note => onChange({note})}/>
 			<CategorySection value={selected.category}
-											 onChange={(category) => setSelected({
-												 ...selected, category
-											 })}
-			/>
+											 onChange={category => onChange({category})}/>
 			<NumberPanelSection value={selected.output}
-													onChange={(output) => setSelected({
-														...selected, output
-													})}
-			/>
+													onChange={output => onChange({output})}/>
 		</MyLayout>
 	);
 }
