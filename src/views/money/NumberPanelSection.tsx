@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import React, {useState} from 'react';
 
-const NumberPanelSection = styled.section`
+const Wrapper = styled.section`
 	> .output {
 		font-size: 36px;
 		line-height: 72px;
@@ -53,5 +54,62 @@ const NumberPanelSection = styled.section`
 		}
 	}
 `;
+
+const NumberPanelSection = () => {
+	const [output, _setOutput] = useState('0');
+	const setOutput = (output: string) => {
+		if (output.length <= 16) {
+			output.length === 0 && (output = '0');
+			_setOutput(output);
+		}
+	};
+	const onClickButtonWrapper = (e: React.MouseEvent) => {
+		const text = (e.target as HTMLButtonElement).textContent;
+		switch (text) {
+			case '.':
+				if (output.indexOf('.') >= 0) {
+					return;
+				}
+				setOutput(output + text);
+				break;
+			case '删除':
+				setOutput(output.slice(0, -1));
+				break;
+			case '清空':
+				setOutput('');
+				break;
+			case 'OK':
+				break;
+			default:
+				if (!text) { return; }
+				if (output === '0') {
+					setOutput(text);
+					return;
+				}
+				setOutput(output + text);
+		}
+	};
+	return (
+		<Wrapper>
+			<div className="output">{output}</div>
+			<div className="panel clearfix" onClick={onClickButtonWrapper}>
+				<button>1</button>
+				<button>2</button>
+				<button>3</button>
+				<button>删除</button>
+				<button>4</button>
+				<button>5</button>
+				<button>6</button>
+				<button>清空</button>
+				<button>7</button>
+				<button>8</button>
+				<button>9</button>
+				<button className="ok">OK</button>
+				<button className="zero">0</button>
+				<button>.</button>
+			</div>
+		</Wrapper>
+	);
+};
 
 export {NumberPanelSection};
