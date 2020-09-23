@@ -14,19 +14,9 @@ const MyLayout = styled(Layout)`
 export default function Money() {
 	return (
 		<MyLayout>
-			<TagsSection />
-			<NoteSection>
-				<label>
-					<span>备注</span>
-					<input type="text" placeholder="在这里添加备注"/>
-				</label>
-			</NoteSection>
-			<CategorySection>
-				<ul>
-					<li className="selected">支出</li>
-					<li>收入</li>
-				</ul>
-			</CategorySection>
+			<TagsSection/>
+			<NoteSection/>
+			<CategorySection/>
 			<NumberPanelSection>
 				<div className="output">100</div>
 				<div className="panel clearfix">
