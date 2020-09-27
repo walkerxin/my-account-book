@@ -17,10 +17,10 @@ function App() {
 		<AppWrapper>
 			<Router>
 				<Switch>
-					<Route exact path="/tags">
+					<Route exact path="/tags/">
 						<Tags/>
 					</Route>
-					<Route exact path="/tags/:tag">
+					<Route exact path="/tags/:tagId">
 						<Tag/>
 					</Route>
 					<Route exact path="/money">
