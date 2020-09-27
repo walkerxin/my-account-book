@@ -46,9 +46,8 @@ type Props = {
 }
 
 const TagsSection: React.FC<Props> = (props) => {
-	const {tags, setTags} = useTags()
+	const {tags, setTags} = useTags();
 	const selectedTags = props.value;
-	console.log(props.children);
 
 	function onAddTag() {
 		const tagName = window.prompt('请输入你要新增的标签名称：');
