@@ -2,8 +2,11 @@ import Layout from 'components/Layout';
 import React from 'react';
 import {useTags} from 'useTags';
 import styled from 'styled-components';
-import Icon from '../components/Icon';
+import Icon from 'components/Icon';
 import {Link} from 'react-router-dom';
+import {Button} from 'components/Button';
+import {Center} from 'components/Center';
+import {Space} from 'components/Space';
 
 const TagList = styled.ol`
 	font-size: 16px;
@@ -21,17 +24,6 @@ const TagList = styled.ol`
 	}
 `;
 
-const Button = styled.button`
-	border: none;
-	color: #fff;
-	font-size: 18px;
-	background-color: #f60;
-	border-radius: 4px;
-	padding: 9px 14px;
-	margin: 44px auto;
-	display: block;
-`;
-
 function Tags() {
 	const {tags} = useTags();
 	return (
@@ -46,7 +38,12 @@ function Tags() {
 					</Link>
 				)}
 			</TagList>
-			<Button>新增标签</Button>
+			<Center>
+				<Space/>
+				<Space/>
+				<Space/>
+				<Button>新增标签</Button>
+			</Center>
 		</Layout>
 	);
 }
