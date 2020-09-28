@@ -22,10 +22,17 @@ const useTags = () => {
 		return result;
 	};
 
+	const addTag = () => {
+		const tagName = window.prompt('请输入你要新增的标签名称：');
+		if (tagName && tagName.trim()) {
+			setTags([...tags, {id: createId(), name: tagName.trim()}]);
+		}
+	};
+
 	const updateTag = (tagId: number, {name: tagName}: { name: string }) =>
 		setTags([...tags.filter(tag => tag.id !== tagId), {id: tagId, name: tagName}]);
 	const deleteTag = (tagId: number) => setTags(tags.filter(tag => tag.id !== tagId));
-	return {tags, setTags, findTag, findTagIdx, updateTag, deleteTag};
+	return {tags, setTags, findTag, findTagIdx, addTag, updateTag, deleteTag};
 };
 
 export {useTags};
