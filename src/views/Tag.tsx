@@ -30,9 +30,31 @@ type Params = {
 }
 
 const Tag: React.FC = () => {
-	const {findTag} = useTags();
+	const {findTag, updateTag, deleteTag} = useTags();
 	const {tagId} = useParams<Params>();
 	const currentTag = findTag(parseInt(tagId));
+
+	const genEditContent = (tag: { id: number, name: string }) => {
+		return tag ? (
+			<div>
+				<Wrapper>
+					<Input label="标签名" value={tag ? tag.name : ''}
+								 onChange={(e) => updateTag(currentTag.id, {name: e.target.value})}/>
+				</Wrapper>
+				<Center>
+					<Space/>
+					<Space/>
+					<Space/>
+					<Button onClick={onDeleteTag}>删除标签</Button>
+				</Center>
+			</div>
+		) : <Center>tag 已被删除</Center>;
+	};
+
+	const onDeleteTag = () => {
+		deleteTag(currentTag.id);
+	};
+
 	return (
 		<Layout>
 			<Topbar>
@@ -40,15 +62,7 @@ const Tag: React.FC = () => {
 				<span>编辑标签</span>
 				<Icon/>
 			</Topbar>
-			<Wrapper>
-				<Input label="标签名" value={currentTag ? currentTag.name : ''}/>
-			</Wrapper>
-			<Center>
-				<Space/>
-				<Space/>
-				<Space/>
-				<Button>删除标签</Button>
-			</Center>
+			{genEditContent(currentTag)}
 		</Layout>
 	);
 };
