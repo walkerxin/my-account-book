@@ -1,5 +1,5 @@
 import React from 'react';
-import {useParams, useHistory} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import {useTags} from 'useTags';
 import Icon from 'components/Icon';
 import Layout from 'components/Layout';
@@ -53,17 +53,15 @@ const Tag: React.FC = () => {
 
 	const onDeleteTag = () => {
 		deleteTag(currentTag.id);
-	};
-
-	const locationStateHistory = useHistory();
-	const onClickBack = () => {
-		locationStateHistory.goBack();
+		window.location.hash = 'tags';
 	};
 
 	return (
 		<Layout>
 			<Topbar>
-				<Icon name="left" onClick={onClickBack}/>
+				<Link to="/tags">
+					<Icon name="left"/>
+				</Link>
 				<span>编辑标签</span>
 				<Icon/>
 			</Topbar>
