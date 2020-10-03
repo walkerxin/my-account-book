@@ -4,6 +4,7 @@ import {generateOutput} from './NumberPanelSection/generateOutput';
 
 type Props = {
 	value: string;
+	ok: () => void;
 	onChange: (output: string) => void;
 }
 const NumberPanelSection: React.FC<Props> = (props) => {
@@ -17,8 +18,8 @@ const NumberPanelSection: React.FC<Props> = (props) => {
 	const onClickButtonWrapper = (e: React.MouseEvent) => {
 		const text = (e.target as HTMLButtonElement).textContent;
 		if (text === null) { return; }
-		if (text === 'ok') {
-			// TODO
+		if (text === 'OK') {
+			props.ok();
 		}
 		if ('1234567890.'.split('').concat(['清空', '删除']).indexOf(text) >= 0) {
 			setOutput(generateOutput(text, output));
