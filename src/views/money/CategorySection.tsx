@@ -5,7 +5,6 @@ const Wrapper = styled.section`
 	> ul {
 		font-size: 24px;
 		display: flex;
-		background: #C4C4C4;
 		> li {
 			flex: 1;
 			text-align: center;

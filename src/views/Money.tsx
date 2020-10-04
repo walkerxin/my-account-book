@@ -12,6 +12,10 @@ const MyLayout = styled(Layout)`
 	flex-direction: column;
 `;
 
+const CategoryWrapper = styled.div`
+		background: #C4C4C4;
+`;
+
 const defaultData = {
 	tagIds: [] as number[],
 	note: '',
@@ -38,8 +42,10 @@ export default function Money() {
 									 onChange={tagIds => onChange({tagIds})}/>
 			<NoteSection value={selected.note}
 									 onChange={note => onChange({note})}/>
-			<CategorySection value={selected.category}
-											 onChange={category => onChange({category})}/>
+			<CategoryWrapper>
+				<CategorySection value={selected.category}
+												 onChange={category => onChange({category})}/>
+			</CategoryWrapper>
 			<NumberPanelSection value={selected.output}
 													onChange={output => onChange({output})}
 													ok={submit}/>
