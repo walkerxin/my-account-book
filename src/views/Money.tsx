@@ -27,9 +27,10 @@ export default function Money() {
 	};
 	const {addAccountItems} = useAccountItems();
 	const submit = () => {
-		addAccountItems(selected);
-		alert('保存成功');
-		setSelected(defaultData);
+		if (addAccountItems(selected)) {
+			alert('保存成功');
+			setSelected(defaultData);
+		}
 	};
 	return (
 		<MyLayout>
