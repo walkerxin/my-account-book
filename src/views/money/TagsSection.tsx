@@ -20,6 +20,7 @@ const Wrapper = styled.section`
 			padding: 4px 18px;
 			margin: 8px 12px;
 			display: inline-block;
+			word-break: break-word;
 			&:hover {
 				cursor: pointer;
 			}

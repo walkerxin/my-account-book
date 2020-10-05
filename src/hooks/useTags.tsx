@@ -42,8 +42,12 @@ const useTags = () => {
 		}
 	};
 
-	const updateTag = (tagId: number, {name: tagName}: { name: string }) =>
-		setTags([...tags.filter(tag => tag.id !== tagId), {id: tagId, name: tagName}]);
+	const updateTag = (tagId: number, {name: tagName}: { name: string }) => {
+		tagName = tagName.trim()
+		if (tagName) {
+			setTags([...tags.filter(tag => tag.id !== tagId), {id: tagId, name: tagName}]);
+		}
+	}
 	const deleteTag = (tagId: number) => setTags(tags.filter(tag => tag.id !== tagId));
 	return {tags, setTags, getTagName, findTag, findTagIdx, addTag, updateTag, deleteTag};
 };
