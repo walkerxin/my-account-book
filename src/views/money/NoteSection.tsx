@@ -4,7 +4,7 @@ import {Input} from '../../components/Input';
 
 const Wrapper = styled.section`
 	font-size: 14px;
-	height: 72px;
+	line-height: 72px;
 `;
 
 type Props = {

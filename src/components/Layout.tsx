@@ -10,13 +10,9 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   flex-grow: 1;
+  flex-basis: 0;
   overflow: auto;
 `;
-
-type Props = {
-	children: object,
-	className: string
-}
 
 const Layout = (props : any) => {
 	return (

@@ -22,7 +22,7 @@ const Wrapper = styled.section`
 	font-size: 16px;
 	background: #FFF;
 	margin-top: 8px;
-	height: 44px;
+	line-height: 44px;
 `;
 
 type Params = {
