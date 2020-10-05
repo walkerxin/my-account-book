@@ -20,7 +20,7 @@ export const useAccountItems = () => {
 
 	useUpdate(() => {
 		window.localStorage.setItem('accountItems', JSON.stringify(accountItems));
-	}, [accountItems]);
+	}, accountItems);
 
 	const addAccountItems = (item: AddedAccountItem) => {
 		const amount = parseFloat(item.output as string);

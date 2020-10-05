@@ -20,7 +20,7 @@ const useTags = () => {
 
 	useUpdate(() => {
 		window.localStorage.setItem('tags', JSON.stringify(tags));
-	}, [tags]);
+	}, tags);
 
 	const findTag = (tagId: number) => tags.filter(tag => tag.id === tagId)[0];
 	const findTagIdx = (tagId: number) => {
